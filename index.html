@@ -26,6 +26,25 @@
         <img src="imagens/clouds.png" class="clouds">
         <img src="imagens/pipe.png" class="pipe">
         <img src="imagens/mario.gif" class="mario">
+        let score = 0;
+        let isJumping = false;
+
+        function jump() {
+           isJumping = true;
+           score++;
+        document.getElementById('scoreDisplay'). textContent = `Pontuação: ${score}`;
+
+        setTimeout(() => {
+          isJumping = false;
+        }, 500); 
+
+    }
+}
+        document.addEventListener('keydown', function(event) {
+          if (event.code === 'Space') {
+           jump();
+        }
+});
 
     </div>
 </body>
